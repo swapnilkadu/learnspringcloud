@@ -11,5 +11,5 @@ public class EurekaserverdemoApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(EurekaserverdemoApplication.class, args);
 	}
-
+	// http://192.168.0.13:8811/usrsvc/user/healthcheck
 }

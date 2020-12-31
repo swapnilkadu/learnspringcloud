@@ -12,13 +12,6 @@ public class UserModel {
 	private String email;
 	private String passwd;
 	
-	public UserModel(String fname, String lname, String usrname, String passwd) {
-		super();
-		this.fname = fname;
-		this.lname = lname;
-		this.email = email;
-		this.passwd = passwd;
-	}
 	public String getFname() {
 		return fname;
 	}

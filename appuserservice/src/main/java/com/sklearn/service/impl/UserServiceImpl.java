@@ -5,6 +5,7 @@ import java.util.UUID;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.sklearn.dto.UserDTO;
@@ -15,7 +16,7 @@ import com.sklearn.service.UserService;
 @Service
 public class UserServiceImpl implements UserService {
 	
-	UserRepository userRepository;
+	private final UserRepository userRepository;
 	
 	@Autowired
 	public UserServiceImpl(UserRepository userRepository) {
@@ -28,10 +29,13 @@ public class UserServiceImpl implements UserService {
 		ModelMapper modelMapper = new ModelMapper();
 		modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 		UserEntity userEntity = modelMapper.map(userDto, UserEntity.class);
-		userEntity.setEncPasswd("test");
+//		userEntity.setEncPasswd(bCryptPasswordEncoder.encode(userDto.getPasswd()));
+		userEntity.setEncPasswd("hghjgjhgh");
 		userRepository.save(userEntity);
 		
-		return null;
+		UserDTO udt = modelMapper.map(userEntity, UserDTO.class);
+		
+		return udt;
 	}
 
 }

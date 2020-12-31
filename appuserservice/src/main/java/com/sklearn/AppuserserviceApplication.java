@@ -11,5 +11,4 @@ public class AppuserserviceApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(AppuserserviceApplication.class, args);
 	}
-
 }

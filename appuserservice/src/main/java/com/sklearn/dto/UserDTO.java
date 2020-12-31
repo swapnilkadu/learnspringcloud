@@ -13,16 +13,6 @@ public class UserDTO implements Serializable {
 	private String usrId;
 	private String encPasswd;
 
-	public UserDTO(String fname, String lname, String email, String passwd, String usrId, String encPasswd) {
-		super();
-		this.fname = fname;
-		this.lname = lname;
-		this.email = email;
-		this.passwd = passwd;
-		this.usrId = usrId;
-		this.encPasswd = encPasswd;
-	}
-
 	public String getFname() {
 		return fname;
 	}

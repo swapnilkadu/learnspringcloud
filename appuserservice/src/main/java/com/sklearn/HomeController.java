@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.sklearn.dto.UserDTO;
 import com.sklearn.service.UserService;
+import com.sklearn.uimodel.CreateUsrResModel;
 import com.sklearn.uimodel.UserModel;
 
 @RestController
@@ -27,13 +28,16 @@ public class HomeController {
 		return new ResponseEntity<String>("Working", HttpStatus.OK);
 	}
 
-	@PostMapping("createuser")
-	public String createUser(@RequestBody UserModel userModel) {
+	@PostMapping("/createuser")
+	public ResponseEntity<CreateUsrResModel> createUser(@RequestBody UserModel userModel) {
 		ModelMapper mm = new ModelMapper();
 		mm.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 
 		UserDTO userDto = mm.map(userModel, UserDTO.class);
-		userService.createUser(userDto);
-		return "";
+		
+		UserDTO userDtoToReturn = userService.createUser(userDto);
+		CreateUsrResModel curm = mm.map(userDtoToReturn, CreateUsrResModel.class); 
+		
+		return ResponseEntity.status(HttpStatus.CREATED).body(curm);
 	}
 }

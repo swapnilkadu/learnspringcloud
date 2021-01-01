@@ -5,7 +5,6 @@ import java.util.UUID;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.sklearn.dto.UserDTO;
@@ -34,8 +33,7 @@ public class UserServiceImpl implements UserService {
 		userRepository.save(userEntity);
 		
 		UserDTO udt = modelMapper.map(userEntity, UserDTO.class);
-		
 		return udt;
 	}
-
+	
 }

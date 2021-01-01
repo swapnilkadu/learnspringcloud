@@ -16,7 +16,6 @@ public class UserDTO implements Serializable {
 	public String getFname() {
 		return fname;
 	}
-
 	public void setFname(String fname) {
 		this.fname = fname;
 	}
@@ -24,7 +23,6 @@ public class UserDTO implements Serializable {
 	public String getLname() {
 		return lname;
 	}
-
 	public void setLname(String lname) {
 		this.lname = lname;
 	}
@@ -32,7 +30,6 @@ public class UserDTO implements Serializable {
 	public String getEmail() {
 		return email;
 	}
-
 	public void setEmail(String email) {
 		this.email = email;
 	}
@@ -40,7 +37,6 @@ public class UserDTO implements Serializable {
 	public String getPasswd() {
 		return passwd;
 	}
-
 	public void setPasswd(String passwd) {
 		this.passwd = passwd;
 	}
@@ -48,7 +44,6 @@ public class UserDTO implements Serializable {
 	public String getUsrId() {
 		return usrId;
 	}
-
 	public void setUsrId(String usrId) {
 		this.usrId = usrId;
 	}
@@ -56,7 +51,6 @@ public class UserDTO implements Serializable {
 	public String getEncPasswd() {
 		return encPasswd;
 	}
-
 	public void setEncPasswd(String encPasswd) {
 		this.encPasswd = encPasswd;
 	}

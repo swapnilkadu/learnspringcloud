@@ -34,7 +34,6 @@ public class HomeController {
 		mm.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 
 		UserDTO userDto = mm.map(userModel, UserDTO.class);
-		
 		UserDTO userDtoToReturn = userService.createUser(userDto);
 		CreateUsrResModel curm = mm.map(userDtoToReturn, CreateUsrResModel.class); 
 		
